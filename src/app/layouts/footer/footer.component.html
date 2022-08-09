@@ -1,8 +1,6 @@
 <!-- Default Footer -->
 <footer
     class="footer-area"
-    [ngClass]="{'bg-black': router.url === '/creative-agency' || router.url === '/freelancer-portfolio' || router.url === '/saas-startup' || router.url === '/cyber-security-agency'}"
-    [ngClass]="{'d-none': router.url === '/marketing-agency' || router.url === '/personal-portfolio'}"
 >
     <div class="container">
         <div class="row justify-content-center">
@@ -10,7 +8,6 @@
                 <div class="single-footer-widget">
                     <div
                         class="logo"
-                        [ngClass]="{'d-none': router.url === '/creative-agency' || router.url === '/freelancer-portfolio' || router.url === '/saas-startup' || router.url === '/cyber-security-agency'}"
                     >
                         <a routerLink="/">
                             <img src="assets/images/logo.png" alt="logo">
@@ -18,16 +15,15 @@
                     </div>
                     <div
                         class="logo d-none"
-                        [ngClass]="{'d-inline-block': router.url === '/creative-agency' || router.url === '/freelancer-portfolio' || router.url === '/saas-startup' || router.url === '/cyber-security-agency'}"
                     >
                         <a routerLink="/">
                             <img src="assets/images/logo-white.png" alt="white-logo">
                         </a>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <p>I'm available for full-time, part-time, and contract work. </p>
                     <ul class="social-links">
                         <li>
-                            <a href="https://www.linkedin.com/" target="_blank">
+                            <a href="https://www.linkedin.com/in/connor-f/" target="_blank">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </a>
                         </li>
@@ -42,10 +38,7 @@
                             <span (click)="onClick('home')">Home</span>
                         </li>
                         <li>
-                            <span (click)="onClick('about')">About Us</span>
-                        </li>
-                        <li>
-                            <span (click)="onClick('services')">Services</span>
+                            <span (click)="onClick('skills')">Skills</span>
                         </li>
                         <li>
                             <span (click)="onClick('portfolio')">Portfolio</span>
@@ -60,21 +53,18 @@
                 <div class="single-footer-widget">
                     <h3>Quick Links</h3>
                     <ul class="list">
-                        <li>
-                            <span class="nav-link" (click)="onClick('contact')">Contact Us</span>
-                        </li>
-                        <li>
-                            <span class="nav-link" (click)="onClick('pricing')">Pricing</span>
-                        </li>
-                        <li>
-                            <span class="nav-link" (click)="onClick('faq')">FAQ</span>
-                        </li>
-                        <li>
-                            <a routerLink="/privacy-policy">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a routerLink="/terms-conditions">Terms & Conditions</a>
-                        </li>
+                        <li class="nav-item">
+                    <span class="nav-link" (click)="onClick('services')">Expertise</span>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" (click)="onClick('skills')">Skills</span>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" (click)="onClick('experience')">Education/Experience</span>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link" (click)="onClick('clients')">Past Employers</span>
+                </li>
                     </ul>
                 </div>
             </div>
@@ -84,19 +74,15 @@
                     <ul class="get-in-touch">
                         <li>
                             <span>Location:</span>
-                            2750 Quadra Street Victoria, Canada.
+                            Avondale Pennsylvania, United States.
                         </li>
                         <li>
                             <span>Phone:</span>
-                            <a href="tel:+324-9442-515">+324-9442-515</a>
+                            <a href="tel:+17174461753">+1(717)-446-1753</a>
                         </li>
                         <li>
                             <span>Email:</span>
-                            <a href="mailto:hello@luaz.com">hello@luaz.com</a>
-                        </li>
-                        <li>
-                            <span>Fax:</span>
-                            <a href="tel:+324-9442-515">+324-9442-515</a>
+                            <a href="mailto:cfedalen@gmail.com">cfedalen@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -104,37 +90,13 @@
         </div>
     </div>
     <div class="copyright-area">
-        <div class="container">
-            <div *ngIf="router.url === '/'"> 
-            <p>© This website was made by <a class="nav-link" (click)="onClick('home')">Connor Fedalen</a></p>
+        <div *ngIf="router.url === '/'; else elseBlock" class="container">
+            <p>© This website was made by <span class="namespan" (click)="onClick('home')">Connor Fedalen</span></p>
         </div>
+        <ng-template #elseBlock>
+            <p>© This website was made by <span routerLink="/" class="namespan">
+                Connor Fedalen
+            </span></p>
+        </ng-template>
         </div>
-    </div>
-</footer>
-
-<!-- Footer Only for Marketing Agency -->
-<footer
-    class="marketing-agency-footer d-none"
-    [ngClass]="{'d-block': router.url === '/marketing-agency'}"
->
-    <div class="container">
-        <p>© Luaz is Proudly Owned by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
-    </div>
-</footer>
-
-<!-- Footer Only for Personal Portfolio -->
-<footer
-    class="personal-portfolio-footer d-none"
-    [ngClass]="{'d-block': router.url === '/'}"
->
-    <div class="container">
-        <ul class="social-links">
-            <li>
-                <a href="https://www.linkedin.com/" target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </li>
-        </ul>
-        <p>© This website was built by Connor Fedalen</p>
-    </div>
 </footer>

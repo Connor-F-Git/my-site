@@ -14,12 +14,12 @@ export class PpClientsComponent implements OnInit {
 
     partnerSlides: OwlOptions = {
 		nav: false,
-		loop: true,
+		loop: false,
 		margin: 30,
 		dots: false,
 		autoplay: false,
 		smartSpeed: 500,
-		autoplayHoverPause: true,
+		autoplayHoverPause: false,
 		navText: [
 			"<i class='fa-solid fa-chevron-left'></i>",
 			"<i class='fa-solid fa-chevron-right'></i>"
