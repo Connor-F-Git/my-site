@@ -68,6 +68,11 @@
         }
     }
 }
+.namespan {
+    cursor:pointer;
+    color:var(--primaryColor);
+    text-decoration:underline;
+}
 .single-footer-widget {
     margin-bottom: 30px;
 
@@ -215,9 +220,9 @@
 .copyright-area {
     background-color: var(--whiteColor);
     text-align: center;
-    margin-top: 70px;
+    margin-top: 0px;
     padding: {
-        top: 25px;
+        top: 0px;
         bottom: 25px;
     };
     p {
@@ -227,70 +232,7 @@
         }
     }
 }
-.marketing-agency-footer {
-    text-align: center;
-    padding: {
-        top: 25px;
-        bottom: 25px;
-    };
-    p {
-        a {
-            font-weight: 500;
-            color: var(--primaryColor);
-        }
-    }
-}
-.personal-portfolio-footer {
-    text-align: center;
-    background-color: #f9f9f9;
-    padding: {
-        top: 35px;
-        bottom: 35px;
-    };
-    .social-links {
-        list-style-type: none;
-        margin-bottom: 12px;
-        padding-left: 0;
 
-        li {
-            display: inline-block;
-            margin: {
-                left: 3px;
-                right: 3px;
-            };
-            a {
-                width: 35px;
-                height: 35px;
-                font-size: 15px;
-                border-radius: 50%;
-                text-align: center;
-                position: relative;
-                display: inline-block;
-                color: var(--blackColor);
-                transition: var(--transition);
-                background-color: var(--whiteColor);
-
-                i {
-                    left: 0;
-                    right: 0;
-                    top: 50%;
-                    position: absolute;
-                    transform: translateY(-50%);
-                }
-                &:hover {
-                    background-color: var(--primaryColor);
-                    color: var(--whiteColor);
-                }
-            }
-        }
-    }
-    p {
-        a {
-            font-weight: 500;
-            color: var(--primaryColor);
-        }
-    }
-}
 .d-none {
     &.d-inline-block {
         display: inline-block !important;
@@ -322,15 +264,9 @@
         }
     }
     .copyright-area {
-        margin-top: 30px;
+        margin-top: 0px;
         padding: {
-            top: 20px;
-            bottom: 20px;
-        };
-    }
-    .marketing-agency-footer {
-        padding: {
-            top: 20px;
+            top: 0px;
             bottom: 20px;
         };
     }
@@ -361,7 +297,7 @@
         }
     }
     .copyright-area {
-        margin-top: 50px;
+        margin-top: 0px;
     }
     .personal-portfolio-footer {
         padding: {
