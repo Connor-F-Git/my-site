@@ -10,33 +10,84 @@
                 <div class="contact-form">
                     <div class="contact-title">
                         <h2>Hire Me!</h2>
-                        <p>I am available for freelancing work. Please connect with me via phone: <a href="tel:+17174461753">+1(717)-446-1753</a> or email: <a href="mailto:cfedalen@gmail.com">cfedalen@gmail.com</a></p>
+                        <p>I am available for work. Please connect with me via phone: <a href="tel:+17174461753">+1(717)-446-1753</a> or email: <a href="mailto:cfedalen@gmail.com">cfedalen@gmail.com</a></p>
                     </div>
-                    <form>
+                    <form
+                      name="contactForm"
+                      #f="ngForm"
+                      (ngSubmit)="f.valid && saveContact()">
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group mb-3">
-                                    <input type="text" name="name" placeholder="Name" class="form-control">
+                                    <input 
+                                    type="text" 
+                                    name="name" 
+                                    placeholder="Name/Company Name" 
+                                    class="form-control"
+                                    [(ngModel)]="contact.name" name="name"
+                                    [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+                                    required
+                                    minlength="1"
+                                    maxlength="50"
+                                    #name="ngModel">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group mb-3">
-                                    <input type="text" name="email" placeholder="Email" class="form-control">
+                                    <input 
+                                    type="text" 
+                                    name="email" 
+                                    placeholder="Email Address" 
+                                    class="form-control"
+                                    [(ngModel)]="contact.email" name="email"
+                                    [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                                    required
+                                    minlength="1"
+                                    maxlength="50"
+                                    #email="ngModel">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group mb-3">
-                                    <input type="text" name="number" placeholder="Phone number" class="form-control">
+                                    <input 
+                                    type="text" 
+                                    name="phone" 
+                                    placeholder="Phone Number" 
+                                    class="form-control"
+                                    [(ngModel)]="contact.phone" name="phone"
+                                    [ngClass]="{ 'is-invalid': f.submitted && phone.errors }"
+                                    minlength="0"
+                                    maxlength="15"
+                                    #phone="ngModel">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group mb-3">
-                                    <input type="text" name="subject" placeholder="Subject" class="form-control">
+                                    <input 
+                                    type="text" 
+                                    name="subject" 
+                                    placeholder="Subject" 
+                                    class="form-control"
+                                    [(ngModel)]="contact.subject" name="subject"
+                                    [ngClass]="{ 'is-invalid': f.submitted && subject.errors }"
+                                    minlength="1"
+                                    maxlength="200"
+                                    #subject="ngModel">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-sm-12">
                                 <div class="form-group mb-3">
-                                    <textarea name="text" cols="30" rows="5" placeholder="Write your message..." class="form-control"></textarea>
+                                    <textarea 
+                                    name="message" 
+                                    cols="30" 
+                                    rows="5" 
+                                    placeholder="Write your message..." 
+                                    class="form-control"
+                                    required
+                                    [(ngModel)]="contact.message" name="message"
+                                    [ngClass]="{ 'is-invalid': f.submitted && message.errors }"
+                                    minlength="1"
+                                    #message="ngModel"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-sm-12">

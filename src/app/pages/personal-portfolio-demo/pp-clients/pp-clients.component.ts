@@ -28,10 +28,10 @@ export class PpClientsComponent implements OnInit {
 			0: {
 				items: 2
 			},
-			576: {
-				items: 3
-			},
-			695: {
+			//576: {
+			//	items: 3
+			//},
+			/*695: {
 				items: 4
 			},
 			895: {
@@ -39,7 +39,7 @@ export class PpClientsComponent implements OnInit {
 			},
 			1200: {
 				items: 6
-			}
+			}*/
 		}
     }
 
