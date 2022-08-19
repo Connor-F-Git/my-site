@@ -15,7 +15,7 @@
                     <form
                       name="contactForm"
                       #f="ngForm"
-                      (ngSubmit)="f.valid && saveContact()">
+                      (ngSubmit)="f.valid && onSubmit()">
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group mb-3">
@@ -57,7 +57,7 @@
                                     [(ngModel)]="contact.phone" name="phone"
                                     [ngClass]="{ 'is-invalid': f.submitted && phone.errors }"
                                     minlength="0"
-                                    maxlength="15"
+                                    maxlength="25"
                                     #phone="ngModel">
                                 </div>
                             </div>

@@ -7,12 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 import { AngularFireModule } from "@angular/fire/compat";
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { NoopAnimationPlayer } from '@angular/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -30,8 +30,6 @@ import { PpContactComponent } from './pages/personal-portfolio-demo/pp-contact/p
 
 import { ContactService } from './contact-service/contact.service';
 import { environment } from '../environments/environment'
-
-console.log("If you came to the console looking for errors, sorry to disappoint.")
 
 @NgModule({
     declarations: [
@@ -59,11 +57,11 @@ console.log("If you came to the console looking for errors, sorry to disappoint.
         CarouselModule,
         CommonModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule,
         AngularFireDatabaseModule,
-        AngularFireStorageModule,
+        AngularFireAuthModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     providers: [ContactService, NoopAnimationPlayer],
     bootstrap: [AppComponent]

@@ -1,11 +1,6 @@
-import {
-  AngularFireDatabase,
-  AngularFireList,
-  AngularFireObject,
-} from '@angular/fire/compat/database';
-
 import { Injectable } from '@angular/core';
 import { Contact } from '../models/contact.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,30 +8,16 @@ import { Contact } from '../models/contact.model';
 
 export class ContactService {
 
-  private dbPath = '/contacts';
-  contactsRef!: AngularFireList<Contact>;
+  private dbPath = 'https://my-site-eef59-default-rtdb.firebaseio.com/contacts.json';
 
-  contactRef!: AngularFireObject<any>;
+  constructor(private http: HttpClient){}
 
-  constructor(private db: AngularFireDatabase) {
-    this.contactsRef = db.list(this.dbPath);
-  }
-
-  getAll(): AngularFireList<Contact> {
-    return this.contactsRef;
-  }
-
-  create(contact: Contact): any {
-    return this.contactsRef.push(contact);
-  }
-
-  update(key: string, value: any): Promise<void> {
-    return this.contactsRef.update(key, value);
-  }
-  delete(key: string): Promise<void> {
-    return this.contactsRef.remove(key);
-  }
-  deleteAll(): Promise<void> {
-    return this.contactsRef.remove();
-  }
+  createContact(contact: Contact) {
+    const headers = new HttpHeaders()
+             .set('cache-control', 'no-cache')
+             .set('content-type', 'application/json')
+    return this.http
+             .post(this.dbPath, contact, { headers: headers })
+             .subscribe(res => res);
+  } 
 }
